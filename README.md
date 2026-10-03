@@ -2,7 +2,7 @@
 
 
 
-\- Nama  : Hamit Indra Nugroho
+\- Nama  : Hamid Indra Nugroho
 
 \- NIM   : 25430029
 
