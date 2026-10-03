@@ -1,10 +1,5 @@
-\# Praktikum Basis Data
+# Praktikum Basis Data
 
-
-
-\- Nama  : Hamid Indra Nugroho
-
-\- NIM   : 25430029
-
-\- Kelas : B
-
+- Nama  : Hamid Indra Nugroho
+- NIM   : 25430029
+- Kelas : B
