@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="5w5nd7mGREiXBYwT7VTQ">
-    <mxGraphModel dx="1899" dy="622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1845" dy="590" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -432,7 +432,7 @@
             <mxRectangle height="40" width="60" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1MmnsezUH-vAB6YtxIZY-152" parent="1MmnsezUH-vAB6YtxIZY-150" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;code dir=&quot;ltr&quot;&gt;id_barang&lt;/code&gt;" vertex="1">
+        <mxCell id="1MmnsezUH-vAB6YtxIZY-152" parent="1MmnsezUH-vAB6YtxIZY-150" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;code dir=&quot;ltr&quot;&gt;id_barang&lt;/code&gt;" vertex="1">
           <mxGeometry height="40" width="215" x="60" as="geometry">
             <mxRectangle height="40" width="215" as="alternateBounds" />
           </mxGeometry>
@@ -657,7 +657,7 @@
           <mxGeometry height="30" width="60" x="-455" y="760" as="geometry" />
         </mxCell>
         <mxCell id="1MmnsezUH-vAB6YtxIZY-313" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;" value="kotak legenda" vertex="1">
-          <mxGeometry height="210" width="180" x="-532.5" y="1100" as="geometry" />
+          <mxGeometry height="230" width="180" x="-532.5" y="1090" as="geometry" />
         </mxCell>
         <mxCell id="1MmnsezUH-vAB6YtxIZY-314" parent="1MmnsezUH-vAB6YtxIZY-313" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" value="" vertex="1">
           <mxGeometry height="30" width="180" y="30" as="geometry" />
@@ -725,16 +725,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1MmnsezUH-vAB6YtxIZY-326" parent="1MmnsezUH-vAB6YtxIZY-313" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
-          <mxGeometry height="30" width="180" y="180" as="geometry" />
+          <mxGeometry height="50" width="180" y="180" as="geometry" />
         </mxCell>
         <mxCell id="1MmnsezUH-vAB6YtxIZY-327" parent="1MmnsezUH-vAB6YtxIZY-326" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;" value="&#xa;1..N&#xa;&#xa;" vertex="1">
-          <mxGeometry height="30" width="30" as="geometry">
-            <mxRectangle height="30" width="30" as="alternateBounds" />
+          <mxGeometry height="50" width="30" as="geometry">
+            <mxRectangle height="50" width="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1MmnsezUH-vAB6YtxIZY-328" parent="1MmnsezUH-vAB6YtxIZY-326" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" value="satu atau banyak" vertex="1">
-          <mxGeometry height="30" width="150" x="30" as="geometry">
-            <mxRectangle height="30" width="150" as="alternateBounds" />
+          <mxGeometry height="50" width="150" x="30" as="geometry">
+            <mxRectangle height="50" width="150" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1MmnsezUH-vAB6YtxIZY-332" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;b&gt;ERD Koperasi Mahasiswa Sejahtera (Kopma)&lt;/b&gt;" vertex="1">
@@ -759,7 +759,7 @@
           <mxGeometry height="30" width="60" x="-310" y="870" as="geometry" />
         </mxCell>
         <mxCell id="1MmnsezUH-vAB6YtxIZY-342" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="tercantum di" vertex="1">
-          <mxGeometry height="30" width="60" x="-630" y="690" as="geometry" />
+          <mxGeometry height="30" width="60" x="-640" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
