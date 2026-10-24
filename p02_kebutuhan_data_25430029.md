@@ -66,6 +66,7 @@ Isian yang disimpan, diambil dari data lain, atau dihitung:
 | Nama dan jenis anggota | Diambil dari data anggota | Tidak diketik ulang di slip |
 | Nomor petugas | Disimpan | Rujukan ke petugas yang melayani (AB-08) |
 | Nomor eksemplar | Disimpan | Per baris, kunci gabungan dengan nomor peminjaman |
+| Nomor petugas pengembalian | Disimpan | Per baris, kosong sebelum dikembalikan; mencatat petugas yang menerima pengembalian (AB-08) |
 | Judul | Diambil dari data buku | Lewat eksemplar |
 | Tanggal kembali | Disimpan | Per baris, kosong sebelum dikembalikan |
 | Kondisi kembali | Disimpan | Per baris, hasil pemeriksaan PB-04 |
@@ -81,7 +82,7 @@ Isian yang disimpan, diambil dari data lain, atau dihitung:
 | Eksemplar | **no eksemplar** (identitas), kode buku, kondisi, status, tanggal masuk, lokasi rak | Lembar pemeriksaan |
 | Petugas | **nomor petugas** (identitas), nama, alamat, no HP, peran (petugas/kepala) | Data kepegawaian |
 | Peminjaman | **nomor peminjaman** (identitas), nomor anggota, nomor petugas, tanggal pinjam, tanggal jatuh tempo, status | Slip peminjaman |
-| Detail peminjaman | nomor peminjaman, no eksemplar, tanggal kembali, kondisi kembali, catatan pemeriksaan | Slip peminjaman, lembar pemeriksaan |
+| Detail peminjaman | nomor peminjaman, no eksemplar, tanggal kembali, kondisi kembali, catatan pemeriksaan, nomor petugas pengembalian | Slip peminjaman, lembar pemeriksaan |
 | Pemasok | **kode pemasok** (identitas), nama, alamat, telepon | Nota penerimaan |
 | Penerimaan buku | **nomor nota** (identitas), kode pemasok, nomor petugas penerima, tanggal terima | Nota penerimaan |
 | Detail penerimaan | nomor nota, kode buku, jumlah diterima | Nota penerimaan |
@@ -119,13 +120,13 @@ Tanda \* menandai asumsi yang perlu disesuaikan dengan kebijakan perpustakaan. T
 | KI-03 | Daftar buku yang sedang dipinjam seorang anggota | Petugas | Anggota, peminjaman, detail peminjaman, eksemplar, buku |
 | KI-04 | Daftar eksemplar yang melewati tanggal jatuh tempo dan belum kembali, beserta hari terlambat | Petugas | Peminjaman, detail peminjaman |
 | KI-05 | Riwayat peminjaman per anggota dan per judul | Petugas, kepala | Peminjaman, detail peminjaman, eksemplar, buku |
-| KI-06 | Lima judul paling sering dipinjam per bulan | Kepala | Detail peminjaman, eksemplar, buku |
+| KI-06 | Lima judul paling sering dipinjam per bulan | Kepala | Peminjaman (bulan dari tanggal pinjam), detail peminjaman, eksemplar, buku |
 | KI-07 | Daftar eksemplar berkondisi rusak atau berstatus diperbaiki | Petugas | Eksemplar, buku |
-| KI-08 | Daftar sanksi belum lunas per anggota | Kepala, petugas | Sanksi, anggota |
+| KI-08 | Daftar sanksi belum lunas per anggota | Kepala, petugas | Sanksi, detail peminjaman, peminjaman, anggota |
 | KI-09 | Total denda yang ditetapkan dan yang sudah dilunasi per bulan | Kepala | Sanksi |
 | KI-10 | Riwayat penerimaan buku per pemasok per bulan | Kepala | Penerimaan, detail penerimaan, pemasok |
 | KI-11 | Jumlah judul dan eksemplar per kategori | Kepala | Buku, eksemplar |
-| KI-12 | Jumlah transaksi peminjaman dan pengembalian yang dilayani tiap petugas per bulan | Kepala | Petugas, peminjaman |
+| KI-12 | Jumlah transaksi peminjaman dan pengembalian yang dilayani tiap petugas per bulan | Kepala | Petugas, peminjaman (petugas peminjam), detail peminjaman (petugas pengembalian) |
 
 ## 7. Matriks CRUD
 
@@ -175,6 +176,7 @@ Kamus memuat elemen penting dari tiap entitas. Penanggung jawab adalah pihak yan
 | nomor_peminjaman | Nomor transaksi peminjaman | PJM-2610-0007 | Unik per transaksi | Petugas |
 | tanggal_pinjam | Tanggal transaksi pinjam | 06/10/2026 | Wajib | Petugas |
 | tanggal_jatuh_tempo | Batas pengembalian | 13/10/2026 | Tidak boleh sebelum tanggal pinjam (AB-05) | Petugas |
+| nomor_petugas_kembali | Petugas yang menerima pengembalian | PT-03 | Kosong sebelum kembali; merujuk nomor_petugas (AB-08) | Petugas |
 | tanggal_kembali | Tanggal buku dikembalikan | 15/10/2026 | Kosong sebelum kembali; tidak sebelum tanggal pinjam | Petugas |
 | kondisi_kembali | Kondisi saat dikembalikan | Rusak ringan | Sama dengan nilai kondisi_eksemplar | Petugas |
 | kode_pemasok | Kode pemasok atau penerbit | PS-007 | Unik, format PS- dan 3 digit | Petugas |
@@ -231,3 +233,10 @@ NIM 25430029, dua digit terakhir 29.
 | 8 | Tarif denda atau lama pinjam berubah | Transaksi lama terhitung ulang dengan aturan baru | Simpan nominal pada sanksi dan jatuh tempo pada peminjaman (AB-05, AB-09) | Kepala |
 | 9 | Jumlah pada nota tidak sama dengan eksemplar yang didaftarkan | Stok tidak akurat | Rekonsiliasi saat penerimaan (AB-14, AB-15) | Petugas |
 | 10 | Riwayat tertimpa saat status diperbarui | Riwayat hilang | Tanpa hapus fisik dan jejak audit (AB-16) | Kepala |
+
+## 11. Catatan revisi setelah Pertemuan 3
+
+Hasil penelusuran KI pada ERD proyek (P3) menuntut pembaruan dokumen ini:
+
+- `nomor petugas pengembalian` ditambahkan pada detail peminjaman (bagian 3.1, 4, dan 8), karena AB-08 mewajibkan pengembalian mencatat petugasnya dan KI-12 menghitung pengembalian per petugas.
+- Daftar data KI-06, KI-08, dan KI-12 dilengkapi dengan entitas yang benar-benar dilewati jalurnya (bagian 6).
